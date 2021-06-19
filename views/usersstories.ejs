@@ -1,0 +1,37 @@
+
+<% include ./partials/header %>
+
+<div class="PostContainer">
+  <h1 class="hometitle"><%=title%></h1>
+  <p class="author">by <%=author%></p>
+  <div id="2dd">
+  <p class="Content"><%=content%></p>
+  <button id="2dd" onclick="openForm()" class="btn btn-primary">Edit Stories</button>
+
+</div>
+  <div class="form-popup" id="myForm">
+    <form action="/user/usersstrories/<%=id %>" method="post">
+      <textarea class="form-control" name="postBody" rows="10" cols="30"><%=content%></textarea><br>
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
+      <button type="button" class="btn cancel btn-outline-primary" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+
+</div>
+
+<% include ./partials/footer %>
+
+
+
+<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    document.getElementById("2dd").style.display = "none";
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    document.getElementById("2dd").style.display = "block";
+  }
+</script>

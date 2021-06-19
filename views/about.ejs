@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+
+<div class="row">
+  <div class="col-lg-6">
+    <h1 class="headingstyle">About Us</h1>
+    <p class="Content">The project titled “Your Stories” mainly refers to your stories it mean you can publish or share your experiences in it and this helps people to understand how they should deal with various emotions  and also inspire people to do something good.</p>
+  </div>
+  <div class="col-lg-6">
+    <h1 class="headingstyle">FeedBack Form</h1>
+      <form class="form-group" action="/about" method="post">
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" type="email" name="Email">
+          <label>Full Name</label>
+          <input class="form-control" type="text" name="username">
+          <label>Comment</label>
+          <textarea class="form-control" name="Queries" rows="5" cols="30"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" name="button">Submit</button>
+      </form>
+  </div>
+</div>
+
+<% include ./partials/footer %>

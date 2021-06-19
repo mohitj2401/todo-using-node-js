@@ -1,0 +1,20 @@
+
+<% include ./partials/header %>
+
+  <%  posts.forEach(function(post){ %>
+    <div class="PostContainer">
+    <h1  class="hometitle"><%=post.title%></h1>
+    <p class="author">by <%=post.author.toUpperCase() %></p>
+    <p class="Content">
+    <%=post.content%>
+    </p>
+    <a href="/delete/<%=post._id%>" class="btn btn-outline-secondary btn-sm">
+      Delete Post
+    </a>
+    
+   </div>
+
+    <% }) %>
+
+<% include ./partials/footer %>
+  

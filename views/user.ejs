@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+<%  posts.forEach(function(post){ %>
+<div class="PostContainer">
+  <h1 class="hometitle"><%=post.title%></h1>
+  <p class="author">by <%=post.author.toUpperCase() %></p>
+  <% if(post.content.length>150){ %>
+    <p class="Content">
+      <%=post.content.substring(0, 150)+ "...."%>
+    </p>
+    <a href="/user/usersstrories/<%=post._id%>" class="btn btn-outline-secondary btn-sm">
+      Read More</a>
+
+    <% }else{ %>
+    <p class="Content">
+      <%=post.content%>
+    </p>
+    <a href="/user/usersstrories/<%=post._id%>" class="btn btn-outline-secondary btn-sm">
+      Edit Post</a>
+
+    <% } %>
+    <a href="/delete/<%=post._id%>" class="btn btn-outline-danger btn-sm">
+    Delete Post
+    </a>
+</div>
+
+
+<% }) %>
+
+
+<% include ./partials/footer %>
