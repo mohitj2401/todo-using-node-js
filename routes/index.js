@@ -169,9 +169,9 @@ router.get("/about", ensureAuthenticated, function (req, res) {
 router.post("/about", ensureAuthenticated, function (req, res) {
   const feedback = new Feedback({
     Email: req.body.Email,
-    username:req.body.username,
+    username: req.body.username,
     Queries: req.body.Queries
-    
+
   });
   feedback.save(function (err) {
     if (!err) {
@@ -182,7 +182,7 @@ router.post("/about", ensureAuthenticated, function (req, res) {
 
 
 router.get("/admin", ensureAuthenticated, function (req, res) {
-  if (req.user.email != "mohitj2401@gmail.com") {
+  if (req.user.email != "admin_email") {
     req.logout();
     req.flash('success_msg', 'You are Not admin');
     res.redirect('/users/login');
